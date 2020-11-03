@@ -11,12 +11,16 @@ Your Project
 
 That's this file! We use README files to share information & instructions about how to use our code.
 
+### ← collide.js
+
+An artist wrote this very long library so that we could use it in our projects to detect collision between shapes without needing to get to deep into the math behind it. How nice of them!
+
 ### ← index.html
 
-The index.html is usually where we build websites, but today we're focusing on p5.js, a library where we can use JavaScript to create dynamic and even interactive art. 
+The index.html is usually where we build websites, but today we'll be scripting instead.
 
 ### ← script.js
 
-Most of the code we write today will live in this script file, where we can write our p5.js code. 
+Most of the code we write today will live in this script file, where we can write our p5.js code. The p5.js library lets us write JavaScript code that is GREAT at manipulating shapes and color on a canvas - perfect for dynamic and interactive art. 
 
 

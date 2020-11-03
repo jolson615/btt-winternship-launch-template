@@ -1,11 +1,7 @@
 Welcome to Glitch
 =================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+At [Upperline Code](https://www.upperlinecode.com/), Glitch is our favorite tool when we want to make websites or host interactive art projects online. 
 
 
 Your Project
@@ -13,25 +9,14 @@ Your Project
 
 ### ← README.md
 
-That's this file, where you can tell people what your cool website does and how you built it.
+That's this file! We use README files to share information & instructions about how to use our code.
 
 ### ← index.html
 
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
+The index.html is usually where we build websites, but today we're focusing on p5.js, a library where we can use JavaScript to create dynamic and even interactive art. 
 
 ### ← script.js
 
-If you're feeling fancy you can add interactivity to your site with JavaScript.
+Most of the code we write today will live in this script file, where we can write our p5.js code. 
 
-### ← assets
 
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ

@@ -56,7 +56,7 @@ function draw() {
 }
 
 class bouncyBall {
-  constructor(radius = random(5, 16), color = random(360)) {
+  constructor(radius = random(minRadius, maxRadius), color = random(360)) {
     // Core features
     this.x = random(width);
     this.y = random(height);

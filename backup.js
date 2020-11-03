@@ -10,7 +10,7 @@ function dashboard() {
   // Background Settings
   backgroundShade = 80 // 0: black, 100: white
   // Settings for the dots
-  numberOfDots = 1
+  numberOfDots = 10
   minRadius = 5
   maxRadius = 20
   minSpeed = 0.5 
@@ -24,7 +24,7 @@ function dashboard() {
   // settings for the player
   myColor = random(360);
   myRadius = 15;
-  showPlayerDot = false;
+  showPlayerDot = true;
   // General Settings
   message = "Welcome to My Project"
   textSize = 30
@@ -48,7 +48,7 @@ function takeAction(dot) {
 
 function setup() {
   dashboard()
-  createCanvas(windowWidth, windowHeight - 20);
+  createCanvas(windowWidth - 20, windowHeight - 20);
   colorMode(HSL, 360, 100, 100);
   dots = [];
   for (let i = 0; i < numberOfDots; i++) {

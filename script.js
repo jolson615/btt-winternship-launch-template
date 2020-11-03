@@ -36,9 +36,9 @@ function draw() {
     dot.bounce();
     dot.move();
     dot.puff();
-    dot.jitter(3);
+    // dot.jitter(3);
     dot.cycleColor();
-    dot.checkCollision();
+    dot.getEatenIfNearMouse();
   });
   
   fill(myColor, 80, 70);
@@ -46,19 +46,24 @@ function draw() {
 }
 
 class bouncyBall {
-  constructor() {
+  constructor(radius = random(5, 16), color = random(360)) {
+    // Core features
     this.x = random(width);
     this.y = random(height);
-    this.r = random(5, 12);
+    this.r = radius;
+    // For color
+    this.color = color
+    // For puff & deflate
     this.maxR = 20;
     this.minR = 5;
-    this.growthDirection = 1;
+    this.growthDirection = random([1, -1]);
     this.growthRate = 0.1;
-    this.color = random(360);
+    // To set constraints on speed
     this.masterXvelocity = random(0.5, 3);
     this.masterYvelocity = random(0.5, 3);
     this.xVelocity = this.masterXvelocity;
     this.yVelocity = this.masterYvelocity;
+    // To randomize direction
     if (random(-1, 1) > 0) {
       this.xVelocity = this.xVelocity * -1;
     }
@@ -99,9 +104,10 @@ class bouncyBall {
   }
   
   puff() {
-    if (random(0, 1) < 0.05) {
-      this.growthDirection = this.growthDirection * -1;
-    }
+    
+    // if (random(0, 1) < 0.05) {
+    //   this.growthDirection = this.growthDirection * -1;
+    // }
     if (this.r > this.maxR) {
       this.growthDirection = -1 * abs(this.growthDirection);
     } else if (this.r < this.minR) {
@@ -114,9 +120,8 @@ class bouncyBall {
     this.color = (this.color + random(0, 1.2)) % 360;
   }
 
-  checkCollision() {
-    if (
-      collideCircleCircle(
+  getEatenIfNearMouse() {
+    let collision = collideCircleCircle(
         this.x,
         this.y,
         this.r * 2,
@@ -124,7 +129,7 @@ class bouncyBall {
         mouseY,
         myRadius * 2
       )
-    ) {
+    if (collision) {
       // Code to sum AREA, not radii
       let myArea = myRadius ** 2 * PI;
       let smallArea = this.r ** 2 * PI;

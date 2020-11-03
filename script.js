@@ -10,9 +10,9 @@ let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 function setup() {
   //// ==== YOUR DASHBOARD ==== ////
   backgroundShade = 80 // 0: black, 100: white
-  numberOfDots = 3
+  numberOfDots = 100
   minRadius = 5
-  maxRadius = 16
+  maxRadius = 20
   minSpeed = 0.5 
   maxSpeed = 3
   jitterAmplitude = 0

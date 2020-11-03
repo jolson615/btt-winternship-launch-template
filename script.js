@@ -1,8 +1,8 @@
 /* 
-global createCanvas, windowWidth, windowHeight, colorMode, HSL, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, color, abs, noStroke, sqrt, PI
+global createCanvas, windowWidth, windowHeight, colorMode, HSL, textSize, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, color, abs, noStroke, sqrt, PI
 */
 
-let myColor, myRadius, showPlayerDot, backgroundShade, message, textSize, showText;
+let myColor, myRadius, showPlayerDot, backgroundShade, message, showText;
 let dots, numberOfDots, colorOfDots, minRadius, maxRadius, minSpeed, maxSpeed;
 let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 
@@ -27,7 +27,6 @@ function dashboard() {
   showPlayerDot = false;
   // General Settings
   message = "Welcome to My Project"
-  textSize = 30
   showText = false;
 }
 
@@ -65,7 +64,7 @@ function draw() {
     fill(myColor, saturation, lightness);
     ellipse(mouseX, mouseY, myRadius * 2);
   }
-  
+  text(message, width/2, height/2)
 }
 
 class bouncyBall {

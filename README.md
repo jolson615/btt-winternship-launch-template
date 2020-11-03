@@ -3,7 +3,7 @@ Welcome to Glitch
 
 At [Upperline Code](https://www.upperlinecode.com/), Glitch is our favorite tool when we want to make websites or host interactive art projects online. 
 
-You can access this repo at [bit.ly/csfair-p5](http://bit.ly/csfair-p5).
+You can access this repo at [bit.ly/csfair-p5](http://bit.ly/csfair-p5). You can see examples of what you can do with p5 on <a href="https://p5js.org/examples/" target="_blank">their site</a>. 
 
 Be sure to make your own copy by pressing "remix" in the dropdown menu in the top left corner. 
 

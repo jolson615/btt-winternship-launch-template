@@ -1,15 +1,25 @@
 /* 
-global createCanvas, windowWidth, windowHeight, colorMode, HSL, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, abs, noStroke, sqrt, PI
+global createCanvas, windowWidth, windowHeight, colorMode, HSL, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, color, abs, noStroke, sqrt, PI
 */
 
-let dots, myColor, myRadius, numberOfDots, colorOfDots, minR, maxR, minSpeed, maxSpeed
+let myColor, myRadius, backgroundShade;
+let dots, numberOfDots, colorOfDots, minRadius, maxRadius, minSpeed, maxSpeed;
+let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 
-// The setup function lets us control what we want to be true at the start of our project. 
+
 function setup() {
   //// ==== YOUR DASHBOARD ==== ////
-  numberOfDots = 20
-
-  
+  backgroundShade = 80 // 0: black, 100: white
+  numberOfDots = 3
+  minRadius = 5
+  maxRadius = 16
+  minSpeed = 0.5 
+  maxSpeed = 3
+  jitterAmplitude = 0
+  colorCycleSpeed = 0.8
+  rateOfInflation = 0.1 
+  saturation = 80
+  lightness = 70
   //// ===== END DASHBOARD ==== ////
   
   
@@ -30,14 +40,14 @@ function setup() {
 }
 
 function draw() {
-  background(220, 0, 80);
+  background(220, 0, backgroundShade);
   dots.forEach(dot => {
     dot.display();
     dot.bounce();
     dot.move();
-    // dot.puff();
-    // dot.jitter(3);
-    // dot.chameleon();
+    dot.puff();
+    dot.jitter();
+    dot.chameleon();
     // dot.getEatenIfNearMouse();
   });
   
@@ -54,10 +64,10 @@ class bouncyBall {
     // For color
     this.color = color
     // For puff & deflate
-    this.maxR = 20;
-    this.minR = 5;
+    this.maxR = maxRadius;
+    this.minR = minRadius;
     this.growthDirection = random([1, -1]);
-    this.growthRate = 0.1;
+    this.growthRate = rateOfInflation
     // To set constraints on speed
     this.masterXvelocity = random(0.5, 3);
     this.masterYvelocity = random(0.5, 3);
@@ -98,16 +108,12 @@ class bouncyBall {
     ellipse(this.x, this.y, this.r * 2);
   }
   
-  jitter(amount = 1) {
-    this.x += random(-1 * amount, amount)
-    this.y += random(-1 * amount, amount)
+  jitter() {
+    this.x += random(-1 * jitterAmplitude, jitterAmplitude)
+    this.y += random(-1 * jitterAmplitude, jitterAmplitude)
   }
   
   puff() {
-    
-    // if (random(0, 1) < 0.05) {
-    //   this.growthDirection = this.growthDirection * -1;
-    // }
     if (this.r > this.maxR) {
       this.growthDirection = -1 * abs(this.growthDirection);
     } else if (this.r < this.minR) {
@@ -117,7 +123,7 @@ class bouncyBall {
   }
   
   chameleon() {
-    this.color = (this.color + random(0, 1.2)) % 360;
+    this.color = (this.color + colorCycleSpeed) % 360;
   }
 
   getEatenIfNearMouse() {

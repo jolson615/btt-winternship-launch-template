@@ -15,7 +15,8 @@ function dashboard() {
   maxRadius = 20
   minSpeed = 0.5 
   maxSpeed = 3
-  jitterAmplitude = 0
+  // Advanced Settings for the dots
+  jitterAmplitude = 2
   colorCycleSpeed = 0.8
   rateOfInflation = 0.1 
   saturation = 80
@@ -41,7 +42,8 @@ function takeAction(dot) {
 }
 
 
-//// ===== Feel free to explore beyond this space, but please know that changes here could code-breaking changes ==== ///
+//// ===== Feel free to explore beyond this space, but please know ======
+///        that changes below this line could code-breaking changes 
 
 
 function setup() {
@@ -116,6 +118,7 @@ class bouncyBall {
   display() {
     fill(this.color, 80, 70);
     noStroke();
+    // If you want to replace the dots with another shape, here's the place to do it. 
     ellipse(this.x, this.y, this.r * 2);
   }
   

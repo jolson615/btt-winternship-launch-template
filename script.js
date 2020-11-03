@@ -2,13 +2,13 @@
 global createCanvas, windowWidth, windowHeight, colorMode, HSL, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, abs, noStroke, sqrt, PI
 */
 
-let dots, myColor, myRadius, numberOfDots, colorOfDots 
+let dots, myColor, myRadius, numberOfDots, colorOfDots, minR, maxR, minSpeed, maxSpeed
 
 // The setup function lets us control what we want to be true at the start of our project. 
 function setup() {
   //// ==== YOUR DASHBOARD ==== ////
   numberOfDots = 20
-  //colorOfDots = 
+
   
   //// ===== END DASHBOARD ==== ////
   
@@ -35,10 +35,10 @@ function draw() {
     dot.display();
     dot.bounce();
     dot.move();
-    dot.puff();
+    // dot.puff();
     // dot.jitter(3);
-    dot.cycleColor();
-    dot.getEatenIfNearMouse();
+    // dot.chameleon();
+    // dot.getEatenIfNearMouse();
   });
   
   fill(myColor, 80, 70);
@@ -116,7 +116,7 @@ class bouncyBall {
     this.r += this.growthDirection * this.growthRate;
   }
   
-  cycleColor() {
+  chameleon() {
     this.color = (this.color + random(0, 1.2)) % 360;
   }
 

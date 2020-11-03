@@ -2,14 +2,14 @@
 global createCanvas, windowWidth, windowHeight, colorMode, HSL, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, color, abs, noStroke, sqrt, PI
 */
 
-let myColor, myRadius, backgroundShade;
+let myColor, myRadius, showPlayerDot, backgroundShade, message, textSize, showText;
 let dots, numberOfDots, colorOfDots, minRadius, maxRadius, minSpeed, maxSpeed;
 let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 
-
-function setup() {
-  //// ==== YOUR DASHBOARD ==== ////
+function dashboard() {
+  // Background Settings
   backgroundShade = 80 // 0: black, 100: white
+  // Settings for the dots
   numberOfDots = 10
   minRadius = 5
   maxRadius = 20
@@ -20,39 +20,50 @@ function setup() {
   rateOfInflation = 0.1 
   saturation = 80
   lightness = 70
-  //// ===== END DASHBOARD ==== ////
-  
-  
-  
-  // Let's also set up the canvas
+  // settings for the player
+  myColor = random(360);
+  myRadius = 15;
+  showPlayerDot = true;
+  // General Settings
+  message = "Welcome to My Project"
+  textSize = 30
+  showText = false;
+}
+
+function takeAction(dot) {
+  dot.display();
+  dot.bounce();
+  dot.move();
+  // dot.puff();
+  // dot.jitter();
+  // dot.chameleon();
+  // dot.getEatenIfNearMouse();
+}
+
+
+//// ===== Feel free to explore beyond this space, but please know that changes here could code-breaking changes ==== ///
+
+
+function setup() {
+  dashboard()
   createCanvas(windowWidth - 20, windowHeight - 20);
   colorMode(HSL, 360, 100, 100);
-  
-  // This array and for loop let us create the objects we'll use in our sketch. 
   dots = [];
   for (let i = 0; i < numberOfDots; i++) {
     dots.push(new bouncyBall());
   }
-  
-  //
-  myColor = random(360);
-  myRadius = 15;
 }
 
 function draw() {
   background(220, 0, backgroundShade);
   dots.forEach(dot => {
-    dot.display();
-    dot.bounce();
-    dot.move();
-    dot.puff();
-    dot.jitter();
-    dot.chameleon();
-    // dot.getEatenIfNearMouse();
+    takeAction(dot)
   });
+  if (showPlayerDot) {
+    fill(myColor, saturation, lightness);
+    ellipse(mouseX, mouseY, myRadius * 2);
+  }
   
-  fill(myColor, 80, 70);
-  ellipse(mouseX, mouseY, myRadius * 2);
 }
 
 class bouncyBall {

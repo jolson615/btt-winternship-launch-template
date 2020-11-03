@@ -10,7 +10,7 @@ let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 function setup() {
   //// ==== YOUR DASHBOARD ==== ////
   backgroundShade = 80 // 0: black, 100: white
-  numberOfDots = 100
+  numberOfDots = 10
   minRadius = 5
   maxRadius = 20
   minSpeed = 0.5 
@@ -56,11 +56,11 @@ function draw() {
 }
 
 class bouncyBall {
-  constructor(radius = random(minRadius, maxRadius), color = random(360)) {
+  constructor(color = random(360)) {
     // Core features
     this.x = random(width);
     this.y = random(height);
-    this.r = radius;
+    this.r = random(minRadius, maxRadius);
     // For color
     this.color = color
     // For puff & deflate

@@ -2,32 +2,37 @@
 global createCanvas, stroke, noFill, windowWidth, windowHeight, colorMode, HSL, textSize, text, random, background, fill, ellipse, mouseX, mouseY, collideCircleCircle, width, height, color, abs, noStroke, sqrt, PI
 */
 
-let myColor, myRadius, showPlayerDot, backgroundShade, message, showText, textColor, sizeOfText;
-let dots, numberOfDots, colorOfDots, minRadius, maxRadius, minSpeed, maxSpeed;
+let myColor, myRadius, showPlayerDot, backgroundShade, message, showText, textShade, sizeOfText;
+let dots, numberOfDots, colorOfDots, minRadius, maxRadius, minSpeed, maxSpeed, colorOptions;
 let jitterAmplitude, colorCycleSpeed, rateOfInflation, lightness, saturation;
 
 function dashboard() {
   // Background Settings
   backgroundShade = 80 // 0: black, 100: white
+  
   // Settings for the dots
   numberOfDots = 1
   minRadius = 5
   maxRadius = 20
   minSpeed = 0.5 
   maxSpeed = 3
+  // colorOptions = [0, 120, 240]
+  
   // Advanced Settings for the dots
   jitterAmplitude = 2
   colorCycleSpeed = 0.8
   rateOfInflation = 0.1 
   saturation = 80
   lightness = 70
+  
   // settings for the player
   myColor = random(360);
   myRadius = 15;
   showPlayerDot = false;
+  
   // General Settings
   message = "Welcome to My Project"
-  textColor = 120 // 0: red, 120: green, 240: blue, 360: red again
+  textShade = 0 // 0: black, 100: white
   sizeOfText = 30
   showText = true;
 }
@@ -48,8 +53,12 @@ function takeAction(dot) {
 
 
 function setup() {
+  colorOptions = []
+  for (let i = 0; i < 360; i++) {
+    colorOptions.push(i);
+  }
   dashboard()
-  createCanvas(windowWidth, windowHeight - 20);
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSL, 360, 100, 100);
   dots = [];
   for (let i = 0; i < numberOfDots; i++) {
@@ -68,13 +77,13 @@ function draw() {
   }
   if (showText) {
     textSize(sizeOfText)
-    fill(textColor, saturation, lightness)
-    text(message, 20, 20)
+    fill(0, 0, textShade)
+    text(message, 20, 40)
   } 
 }
 
 class bouncyBall {
-  constructor(color = random(360)) {
+  constructor(color = random(colorOptions)) {
     // Core features
     this.x = random(width);
     this.y = random(height);

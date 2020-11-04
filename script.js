@@ -28,13 +28,13 @@ function dashboard() {
   // settings for the player
   myColor = random(360);
   myRadius = 15;
-  showPlayerDot = false;
+  showPlayerDot = true;
   
   // General Settings
   message = "Welcome to My Project"
   textShade = 0 // 0: black, 100: white
   sizeOfText = 30
-  showText = true;
+  showText = false;
 }
 
 function takeAction(dot) {
@@ -96,8 +96,8 @@ class bouncyBall {
     this.growthDirection = random([1, -1]);
     this.growthRate = rateOfInflation
     // To set constraints on speed
-    this.masterXvelocity = random(0.5, 3);
-    this.masterYvelocity = random(0.5, 3);
+    this.masterXvelocity = random(minSpeed, maxSpeed);
+    this.masterYvelocity = random(minSpeed, maxSpeed);
     this.xVelocity = this.masterXvelocity;
     this.yVelocity = this.masterYvelocity;
     // To randomize direction
@@ -130,7 +130,7 @@ class bouncyBall {
   }
 
   display() {
-    fill(this.color, 80, 70);
+    fill(this.color, saturation, lightness);
     noStroke();
     // If you want to replace the dots with another shape, here's the place to do it. 
     ellipse(this.x, this.y, this.r * 2);

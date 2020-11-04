@@ -11,9 +11,9 @@ function dashboard() {
   backgroundShade = 80 // 0: black, 100: white
   
   // Settings for the dots
-  numberOfDots = 1
-  minRadius = 5
-  maxRadius = 20
+  numberOfDots = 10
+  minRadius = 7
+  maxRadius = 12
   minSpeed = 0.5 
   maxSpeed = 3
   // colorOptions = [0, 120, 240]

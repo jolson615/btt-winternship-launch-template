@@ -15,13 +15,9 @@ function draw() {
   // Blue-ish circle code
   fill(0, 190, 240)
   ellipse(50, 50, 50, 50)
-  //      x    y   w   h
   
   // Purplish circle code
   fill(90, 0, 222)
   ellipse(550, 50, 50)
-  //      x    y   w&h
-
-
 }
 

@@ -7,7 +7,9 @@ global createCanvas, stroke, triangle, rect, noFill, windowWidth, windowHeight, 
 
 
 function setup() {
+  
   createCanvas(600, 500); 
+  
   noStroke(); 
 }
 

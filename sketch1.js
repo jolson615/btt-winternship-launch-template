@@ -13,15 +13,11 @@ function draw() {
   background(220); // Paints the canvas a nice, neutral grey
   
   // Blue-ish code
-  //   R   G   B    from 0-255
   fill(0, 190, 240)
-  
   ellipse(50, 50, 50, 50)
   
   // Purplish circle code
   fill(90, 0, 222)
-  
-  
   ellipse(550, 50, 50, 50)
 }
 

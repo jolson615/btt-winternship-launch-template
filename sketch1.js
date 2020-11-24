@@ -12,12 +12,16 @@ function setup() {
 function draw() {
   background(220); // Paints the canvas a nice, neutral grey
   
-  // Blue-ish code
+  // Blue-ish circle code
   fill(0, 190, 240)
   ellipse(50, 50, 50, 50)
+  //      x    y   w   h
   
   // Purplish circle code
   fill(90, 0, 222)
-  ellipse(550, 50, 50, 50)
+  ellipse(550, 50, 50)
+  //      x    y   w&h
+
+
 }
 

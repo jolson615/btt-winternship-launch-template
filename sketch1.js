@@ -5,11 +5,23 @@ global createCanvas, stroke, noFill, windowWidth, windowHeight, colorMode, HSL, 
 
 
 function setup() {
-  createCanvas(600, 800);
+  createCanvas(600, 500); // Sizes the canvas, making width = 600 and height = 500
+  noStroke(); // Setting to draw our shapes without outlines
 }
 
 function draw() {
-  background(220)
+  background(220); // Paints the canvas a nice, neutral grey
   
+  // Blue-ish code
+  //   R   G   B    from 0-255
+  fill(0, 190, 240)
+  
+  ellipse(50, 50, 50, 50)
+  
+  // Purplish circle code
+  fill(90, 0, 222)
+  
+  
+  ellipse(550, 50, 50, 50)
 }
 

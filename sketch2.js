@@ -5,7 +5,7 @@ global createCanvas, stroke, noFill, windowWidth, windowHeight, colorMode, HSL, 
 
 
 function setup() {
-  createCanvas(600, 800);
+  createCanvas(600, 500);
 }
 
 function draw() {

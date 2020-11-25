@@ -1,0 +1,14 @@
+HELLO! 
+
+This is just a text file, so there's no code involved.
+
+Each person should add their name to this file once they're in.
+
+The purpose of this is just to make sure that everyone is able 
+to edit the project before you move ahead.
+
+===============================
+WRITE YOUR NAME BELOW THIS LINE
+===============================
+
+

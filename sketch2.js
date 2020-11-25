@@ -3,6 +3,7 @@ global createCanvas, round, stroke, triangle, rect, noFill, windowWidth, windowH
 */
 // List all p5 methods you plan to use in the global so that Glitch can recognize them.
 
+// Group 2 member names: 
 
 function setup() {
   createCanvas(600, 500); // Sizes the canvas, making width = 600 and height = 500
